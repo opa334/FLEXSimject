@@ -1,0 +1,9 @@
+Package: com.opa334.flexsimject
+Name: FLEXSimject
+Depends: mobilesubstrate
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: An awesome MobileSubstrate tweak!
+Maintainer: opa334
+Author: opa334
+Section: Tweaks
