@@ -1,7 +1,6 @@
 #import "FLEXManager.h"
 
 %group Keyboard
-
 %hook mainVC
 
 - (NSArray<UIKeyCommand *> *)keyCommands
@@ -27,7 +26,6 @@
 }
 
 %end
-
 %end
 
 void appOrSceneLoaded(CFNotificationCenterRef center, void *observer, CFStringRef name, const void *object, CFDictionaryRef userInfo)
@@ -46,6 +44,6 @@ void appOrSceneLoaded(CFNotificationCenterRef center, void *observer, CFStringRe
 
 %ctor
 {
-	CFNotificationCenterAddObserver(CFNotificationCenterGetLocalCenter(), NULL, appOrSceneLoaded, (CFStringRef)UIApplicationDidFinishLaunchingNotification, NULL, CFNotificationSuspensionBehaviorCoalesce);
-	CFNotificationCenterAddObserver(CFNotificationCenterGetLocalCenter(), NULL, appOrSceneLoaded, (CFStringRef)UISceneWillConnectNotification, NULL, CFNotificationSuspensionBehaviorCoalesce);
+	CFNotificationCenterAddObserver(CFNotificationCenterGetLocalCenter(), NULL, appOrSceneLoaded, CFSTR("UIApplicationDidFinishLaunchingNotification"), NULL, CFNotificationSuspensionBehaviorCoalesce);
+	CFNotificationCenterAddObserver(CFNotificationCenterGetLocalCenter(), NULL, appOrSceneLoaded, CFSTR("UISceneWillConnectNotification"), NULL, CFNotificationSuspensionBehaviorCoalesce);
 }
